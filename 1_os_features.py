@@ -7,9 +7,11 @@ logging.basicConfig(
 )
 logger = logging.getLogger()
 
+
 # Очистка терминала
 def clear_terminal():
     os.system("clear")
+
 
 # Функция для создания директории проекта
 def create_project_directory(project_name):
@@ -19,6 +21,7 @@ def create_project_directory(project_name):
     else:
         logger.info(f"Директория '{project_name}' уже существует.")
     return project_name
+
 
 # Функция для создания файлов в проектной директории
 def create_files(project_dir):
@@ -30,6 +33,7 @@ def create_files(project_dir):
         logger.info(f"Файл '{file}' создан в '{project_dir}'.")
     return files
 
+
 # Функция для переименования файлов
 def rename_files(project_dir, files):
     for file in files:
@@ -37,6 +41,7 @@ def rename_files(project_dir, files):
         new_file_path = os.path.join(project_dir, f"new_{file}")
         os.rename(old_file_path, new_file_path)
         logger.info(f"Файл '{file}' переименован в 'new_{file}'.")
+
 
 # Функция для проверки существования файлов и директории
 def check_existence(project_dir, files):
@@ -52,12 +57,14 @@ def check_existence(project_dir, files):
     else:
         logger.warning(f"Директория '{project_dir}' не найдена.")
 
+
 # Функция для получения и изменения текущей рабочей директории
 def get_and_change_directory(project_dir):
     current_dir = os.getcwd()
     logger.info(f"Текущая рабочая директория: {current_dir}")
     os.chdir(project_dir)
     logger.info(f"Рабочая директория изменена на: {os.getcwd()}")
+
 
 # Функция для удаления файла
 def delete_file(file_to_delete):
@@ -67,6 +74,7 @@ def delete_file(file_to_delete):
     else:
         logger.warning(f"Файл '{file_to_delete}' не найден.")
 
+
 # Функция для удаления пустой директории
 def delete_empty_directory(dir_to_delete):
     if os.path.exists(dir_to_delete):
@@ -75,12 +83,14 @@ def delete_empty_directory(dir_to_delete):
     else:
         logger.warning(f"Директория '{dir_to_delete}' не найдена.")
 
+
 # Функция для обхода дерева директорий
 def walk_directory():
     for root, dirs, files in os.walk("my_new_project"):
         logger.info(f"Текущая директория: {root}")
         logger.info(f"Подкаталоги: {dirs}")
         logger.info(f"Файлы: {files}")
+
 
 # Функция для получения размера файла
 def get_file_size(project_dir):
@@ -91,11 +101,13 @@ def get_file_size(project_dir):
     else:
         logger.warning(f"Файл '{file_path}' не найден.")
 
+
 # Функция для получения абсолютного пути
 def get_absolute_path():
     relative_path = "new_main.css"
     absolute_path = os.path.abspath(relative_path)
     logger.info(f"Абсолютный путь: {absolute_path}")
+
 
 # Функция для создания лог-файла
 def create_log_file(project_dir):
@@ -107,11 +119,13 @@ def create_log_file(project_dir):
     logger.info(f"Файл логов '{log_file}' создан.")
     return log_file
 
+
 # Функция для вывода содержимого директории
 def list_directory_contents():
     result = os.popen("ls").read()
     logger.info("Список файлов и директорий в текущем каталоге:")
     logger.info(result)
+
 
 # Функция для чтения лог-файла
 def read_log_file(log_file):
@@ -119,8 +133,9 @@ def read_log_file(log_file):
     logger.info(f"Содержимое лог-файла '{log_file}':")
     logger.info(log_content)
 
+
 # Основной блок программы
-DIR_NAME = 'new_directory'
+DIR_NAME = "new_directory"
 
 if __name__ == "__main__":
     # Очищаем терминал
@@ -128,7 +143,7 @@ if __name__ == "__main__":
 
     # Создаем директорию проекта
     project_dir = create_project_directory(DIR_NAME)
-
+'''
     # Создаем файлы в директории проекта
     files = create_files(project_dir)
 
@@ -163,5 +178,4 @@ if __name__ == "__main__":
     list_directory_contents()
 
     # Читаем и выводим содержимое лог-файла
-    read_log_file(log_file)
-
+    read_log_file(log_file)'''
