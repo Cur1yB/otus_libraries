@@ -165,5 +165,3 @@ if __name__ == "__main__":
     # Читаем и выводим содержимое лог-файла
     read_log_file(log_file)
 
-    logger.info(os.name)
-
